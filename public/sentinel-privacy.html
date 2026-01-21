@@ -3,59 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel Forensic - Privacy Policy</title>
+    <title>Privacy Policy - Sentinel Forensic</title>
     <style>
-        body {
-            background-color: #000000;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 { color: #00FF41; border-bottom: 2px solid #00FF41; padding-bottom: 10px; }
-        h2 { color: #00FFFF; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-        .highlight { color: #00FF41; font-weight: bold; }
-        .footer { margin-top: 50px; font-size: 0.8em; color: #666; border-top: 1px solid #333; padding-top: 20px; }
+        body { font-family: 'Courier New', monospace; background-color: #0d0d0d; color: #00ff41; padding: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; border: 1px solid #00ff41; padding: 20px; }
+        h1 { border-bottom: 1px solid #00ff41; padding-bottom: 10px; }
+        h2 { margin-top: 30px; color: #fff; }
+        p, li { color: #ccc; }
+        .highlight { color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>PRIVACY POLICY</h1>
+        <p>Last Updated: January 2026</p>
 
-    <h1>SENTINEL FORENSIC</h1>
-    <p><strong>Privacy Policy & Terms of Service</strong></p>
-    <p>Last Updated: January 20, 2026</p>
+        <h2>1. Introduction</h2>
+        <p><strong>Sentinel Forensic</strong> ("we", "our", or "the App") is designed with a "Privacy First" architecture. We do not operate cloud servers to store your photos or personal data.</p>
 
-    <h2>1. Introduction</h2>
-    <p>Sentinel Forensic ("the App") is a decentralized tool designed to certify the existence and integrity of digital files on the Solana Blockchain. We prioritize user privacy and data sovereignty.</p>
+        <h2>2. Data Collection & Usage</h2>
+        <ul>
+            <li><strong>Photos:</strong> All photos captured are stored <strong>locally</strong> on your device. We do not upload your raw photos to any server.</li>
+            <li><strong>Location Data (GPS):</strong> The App accesses your location strictly to embed coordinates into the photo metadata and generate the forensic hash. This data never leaves your device except as part of the hashed "fingerprint" you choose to publish.</li>
+            <li><strong>Blockchain Data:</strong> When you choose to certify evidence, a SHA-256 hash (a digital fingerprint) is sent to the Solana Blockchain. This hash cannot be reversed to reveal the original photo or location.</li>
+        </ul>
 
-    <h2>2. Data Collection & Storage</h2>
-    <p><span class="highlight">We do not collect, store, or transmit your personal data.</span></p>
-    <p>The App operates entirely locally on your device (Client-Side). Your photos, GPS location, and metadata never leave your phone unless you explicitly choose to share the generated file yourself.</p>
+        <h2>3. Third-Party Services</h2>
+        <p>The App interacts with:</p>
+        <ul>
+            <li><strong>Solana Blockchain:</strong> Public ledger for certification.</li>
+            <li><strong>Arweave (Optional):</strong> If you choose to upload assets.</li>
+        </ul>
 
-    <h2>3. Device Permissions</h2>
-    <ul>
-        <li><strong>Camera:</strong> Used solely to capture evidence photos in real-time. No background recording occurs.</li>
-        <li><strong>Location (GPS):</strong> Used solely to imprint exact coordinates onto the evidence image for forensic validation. This data is not tracked or sent to our servers.</li>
-        <li><strong>Internet:</strong> Used solely to communicate with the Solana Blockchain RPC nodes via your connected Wallet.</li>
-    </ul>
+        <h2>4. User Rights</h2>
+        <p>Since we do not store your data, we cannot delete it for you. You have full control to delete the App and its local data from your device at any time.</p>
 
-    <h2>4. Blockchain Interaction & Fees</h2>
-    <p>When you choose to "Certify On-Chain", the App constructs a transaction. By signing this transaction, you acknowledge:</p>
-    <ul>
-        <li><strong>Public Ledger:</strong> The SHA-256 hash of your file will be permanently recorded on the Solana public blockchain. This action is irreversible.</li>
-        <li><strong>No File Upload:</strong> The image itself is NOT uploaded to the blockchain, only its cryptographic fingerprint (Hash).</li>
-        <li><strong>Service Fee:</strong> Each certification transaction includes a fixed fee of <span class="highlight">0.0009 SOL</span> sent to the Sentinel Treasury to support ongoing development and maintenance of the Sentinel ecosystem. This is in addition to the standard Solana network fee (gas).</li>
-    </ul>
-
-    <h2>5. Disclaimer</h2>
-    <p>The App is provided "as is", without warranty of any kind. The developer (Alexx_17) is not responsible for lost funds due to user error, lost private keys, or blockchain network congestion.</p>
-
-    <div class="footer">
-        <p>Contact: contact@alexx17.xyz</p>
-        <p>&copy; 2026 Alexx_17. All rights reserved.</p>
+        <h2>5. Contact</h2>
+        <p>For privacy inquiries: <a href="mailto:contact@alexx17.xyz" style="color:#00ff41">contact@alexx17.xyz</a></p>
+        
+        <br>
+        <p style="text-align: center; font-size: 0.8em; color: #555;">© 2026 Alexx_17. San Miguel, El Salvador.</p>
     </div>
-
 </body>
 </html>
