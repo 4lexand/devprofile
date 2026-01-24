@@ -11,6 +11,7 @@
         h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
         h2 { color: #fff; margin-top: 30px; border-left: 4px solid #00ff41; padding-left: 10px; }
         .warning { background-color: #2a1a1a; border: 1px solid #ff4444; color: #ffaaaa; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-box { background-color: #002200; border: 1px solid #00ff41; color: #ccffcc; padding: 15px; margin: 20px 0; border-radius: 4px; }
         .highlight { color: #00ff41; font-weight: bold; }
         .step { margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px; }
         .step-number { background-color: #00ff41; color: #000; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
@@ -23,9 +24,19 @@
 <body>
     <div class="container">
         <h1>HOW SENTINEL WORKS</h1>
-        <p>Sentinel Forensic is a tool designed to capture <strong>Immutable Truth</strong>. This guide explains how we protect your privacy while proving the authenticity of your evidence.</p>
+        <p>Sentinel Forensic is a tool designed to capture <strong>Immutable Truth</strong> on the Solana Seeker. This guide explains requirements and verification.</p>
 
-        <h2>1. Privacy Architecture (Local Storage)</h2>
+        <div class="info-box">
+            <h3>📱 1. CRITICAL: Wallet Connection</h3>
+            <p>Sentinel is built exclusively for the <strong>Solana Mobile Stack (SMS)</strong>.</p>
+            <ul>
+                <li>You <strong>MUST</strong> use the device's native <strong>Mobile Wallet Adapter</strong> (e.g., via Phantom or Solflare installed on your Solana Phone).</li>
+                <li>This tool is <strong>NOT COMPATIBLE</strong> with standard web browsers, desktop extension wallets, or external hardware wallets not connected via the Mobile Adapter.</li>
+                <li>Please ensure your phone's wallet is unlocked before capturing evidence.</li>
+            </ul>
+        </div>
+
+        <h2>2. Privacy Architecture (Local Storage)</h2>
         <p>The most important feature of Sentinel is privacy. When you capture evidence:</p>
         <ul>
             <li>The <strong>Full Photo</strong> remains 100% LOCAL on your device.</li>
@@ -33,23 +44,23 @@
             <li>You maintain full custody of the original file within your device's secure storage.</li>
         </ul>
 
-        <h2>2. What goes on the Blockchain?</h2>
+        <h2>3. What goes on the Blockchain?</h2>
         <p>If the photo stays on the phone, how do we certify it? We use Cryptography.</p>
-        <p>When you sign the transaction, we generate a <strong>Digital Fingerprint</strong> (SHA-256 Hash). This fingerprint is permanently written into the <span class="code-snippet">MEMO</span> field of the Solana transaction.</p>
+        <p>When you sign the transaction via the Wallet Adapter, we generate a <strong>Digital Fingerprint</strong> (SHA-256 Hash). This fingerprint is permanently written into the <span class="code-snippet">MEMO</span> field of the Solana transaction.</p>
         <p><em>Analogy: The "Memo" is like the notes section of a bank transfer, but immutable and public forever.</em></p>
 
-        <h2>3. The "Tamper-Proof" Verification</h2>
+        <h2>4. The "Tamper-Proof" Verification</h2>
         <p>This is the core security feature. The App calculates the ID (Hash) of the photo in your gallery in real-time and compares it to the ID recorded on the Blockchain.</p>
         
         <div class="warning">
-            <strong>⚠️ CRITICAL WARNING:</strong><br>
+            <strong>⚠️ WARNING:</strong><br>
             If you edit the photo in your gallery (crop, filter, adjust color) or modify even 1 pixel:<br><br>
             1. The Local ID (Hash) will change immediately.<br>
             2. It will <strong>NOT MATCH</strong> the Hash stored in the Blockchain Memo.<br>
             3. The evidence will be flagged as <strong>"TAMPERED" / INVALID</strong>.
         </div>
 
-        <h2>4. How to Verify (Step-by-Step)</h2>
+        <h2>5. How to Verify (Step-by-Step)</h2>
         <p>After a successful capture, you can verify your evidence independently:</p>
         
         <div class="step">
@@ -69,7 +80,7 @@
 
         <div class="step">
             <span class="step-number">4</span> 
-            Compare that text with the Hash shown in your App. If they match, the photo is 100% authentic and existed at the timestamp shown on the block.
+            Compare that text with the Hash shown in your App. If they match, the photo is 100% authentic.
         </div>
 
         <p class="footer">
