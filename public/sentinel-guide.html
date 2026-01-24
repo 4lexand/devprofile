@@ -12,8 +12,9 @@
         h2 { color: #fff; margin-top: 30px; border-left: 4px solid #00ff41; padding-left: 10px; }
         .warning { background-color: #2a1a1a; border: 1px solid #ff4444; color: #ffaaaa; padding: 15px; margin: 20px 0; border-radius: 4px; }
         .highlight { color: #00ff41; font-weight: bold; }
-        .step { margin-bottom: 15px; }
+        .step { margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px; }
         .step-number { background-color: #00ff41; color: #000; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+        .code-snippet { background-color: #000; border: 1px solid #444; color: #00ff41; padding: 2px 6px; font-family: monospace; border-radius: 3px; }
         a { color: #00ff41; text-decoration: none; border-bottom: 1px dotted #00ff41; }
         a:hover { background-color: #00ff41; color: #000; }
         .footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: #555; }
@@ -34,8 +35,8 @@
 
         <h2>2. What goes on the Blockchain?</h2>
         <p>If the photo stays on the phone, how do we certify it? We use Cryptography.</p>
-        <p>When you sign the transaction, we generate a <strong>Digital Fingerprint</strong> (SHA-256 Hash) of your photo. Only this "Fingerprint" and the metadata (Timestamp & GPS) are sent to the Solana Blockchain.</p>
-        <p><em>Analogy: We send the fingerprint to the digital notary, not the person.</em></p>
+        <p>When you sign the transaction, we generate a <strong>Digital Fingerprint</strong> (SHA-256 Hash). This fingerprint is permanently written into the <span class="code-snippet">MEMO</span> field of the Solana transaction.</p>
+        <p><em>Analogy: The "Memo" is like the notes section of a bank transfer, but immutable and public forever.</em></p>
 
         <h2>3. The "Tamper-Proof" Verification</h2>
         <p>This is the core security feature. The App calculates the ID (Hash) of the photo in your gallery in real-time and compares it to the ID recorded on the Blockchain.</p>
@@ -44,15 +45,32 @@
             <strong>⚠️ CRITICAL WARNING:</strong><br>
             If you edit the photo in your gallery (crop, filter, adjust color) or modify even 1 pixel:<br><br>
             1. The Local ID (Hash) will change immediately.<br>
-            2. It will <strong>NOT MATCH</strong> the ID stored on the Blockchain.<br>
+            2. It will <strong>NOT MATCH</strong> the Hash stored in the Blockchain Memo.<br>
             3. The evidence will be flagged as <strong>"TAMPERED" / INVALID</strong>.
         </div>
 
-        <h2>4. Where to find your Certificate?</h2>
-        <p>After a successful capture, you can verify your evidence directly in the App:</p>
-        <div class="step"><span class="step-number">1</span> Go to the <strong>History / Details</strong> section of the App.</div>
-        <div class="step"><span class="step-number">2</span> Look for the <strong>"Solana Explorer"</strong> link or button.</div>
-        <div class="step"><span class="step-number">3</span> This will open the public ledger showing the <strong>Timestamp</strong> and the <strong>Hash</strong> that matches your photo.</div>
+        <h2>4. How to Verify (Step-by-Step)</h2>
+        <p>After a successful capture, you can verify your evidence independently:</p>
+        
+        <div class="step">
+            <span class="step-number">1</span> 
+            Go to <strong>History</strong> in the App and tap the <strong>"Solana Explorer"</strong> link.
+        </div>
+        
+        <div class="step">
+            <span class="step-number">2</span> 
+            On the Explorer page, scroll down to the section labeled <strong>"Instruction"</strong> or <strong>"Memo"</strong>.
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span> 
+            You will see a text string starting with <span class="code-snippet">"Sentinel Proof: [Your-Hash]"</span>.
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span> 
+            Compare that text with the Hash shown in your App. If they match, the photo is 100% authentic and existed at the timestamp shown on the block.
+        </div>
 
         <p class="footer">
             <a href="https://alexx17.xyz">Back to Home</a> | 
