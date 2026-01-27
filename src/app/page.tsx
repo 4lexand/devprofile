@@ -16,13 +16,13 @@ type Particle = {
 // --- NUEVO COMPONENTE: FONDO DE ORGANISMO VIVO (CANVAS) ---
 const OrganismBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+   
   // Usamos refs para valores que cambian rápido
   const mouseRef = useRef({ x: 0, y: 0, active: false });
-  
+   
   // --- CORRECCIÓN 2: Usamos el tipo 'Particle[]' en lugar de 'any[]' ---
   const particlesRef = useRef<Particle[]>([]);
-  
+   
   // --- CORRECCIÓN 3: Inicializamos con null para evitar error de undefined ---
   const requestRef = useRef<number | null>(null);
 
@@ -116,7 +116,7 @@ const OrganismBackground = () => {
       mouseRef.current.y = e.clientY;
       mouseRef.current.active = true;
     };
-    
+     
     const handleMouseLeave = () => {
       mouseRef.current.active = false;
     };
@@ -141,9 +141,9 @@ const OrganismBackground = () => {
       ref={canvasRef}
       className="absolute inset-0 z-0 pointer-events-none"
       style={{
-         backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px)`,
-         backgroundSize: '50px 50px',
-         backgroundBlendMode: 'overlay'
+          backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+          backgroundBlendMode: 'overlay'
       }}
     />
   );
@@ -167,7 +167,7 @@ export default function Home() {
     if (isPinging) return;
     setIsPinging(true);
     setLatency("..."); 
-    
+     
     setTimeout(() => {
       const isMicro = Math.random() > 0.5;
       const val = isMicro 
@@ -207,7 +207,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            
+             
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-800/50 text-emerald-400 text-xs mb-4">
                 Building on Solana
@@ -276,6 +276,26 @@ export default function Home() {
               </div>
             </a>
 
+            {/* --- NUEVO: Sentinel Forensic --- */}
+            <a href="https://www.alexx17.xyz/sentinel.html" target="_blank" className="block group/card">
+              <div className="p-4 rounded-lg bg-[#0f172a] border border-slate-800 group-hover/card:border-rose-500/50 transition-all hover:shadow-lg hover:shadow-rose-900/20">
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-[10px] font-bold text-rose-400 border border-rose-900/50 bg-rose-900/10 px-2 py-0.5 rounded">MOBILE SEC</span>
+                  <ExternalLink size={14} className="text-slate-500 group-hover/card:text-white transition-colors" />
+                </div>
+                <h4 className="text-white font-bold text-sm">Sentinel Forensic</h4>
+                
+                <p className="text-xs text-slate-400 mt-2 leading-tight flex flex-col gap-1">
+                   <span className="inline-flex items-center gap-1 text-rose-300 font-medium">
+                     <Smartphone size={12} /> Seeker Integration
+                   </span>
+                   <span>
+                     Solana Mobile forensic tool. Captures verified imagery using Seeker hardware.
+                   </span>
+                </p>
+              </div>
+            </a>
+
             {/* Sleepand$Gn */}
             <a href="https://sleepandgn.com/" target="_blank" className="block group/card">
               <div className="p-4 rounded-lg bg-[#0f172a] border border-slate-800 group-hover/card:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-900/20">
@@ -330,13 +350,13 @@ export default function Home() {
           className="bg-gradient-to-br from-slate-900/90 to-[#020617]/90 backdrop-blur-md border border-slate-800 rounded-xl p-6 flex flex-col items-center justify-center hover:border-orange-500/50 transition-all cursor-pointer active:scale-95 group shadow-xl relative overflow-hidden pointer-events-auto"
         >
           {latency && <div className="absolute inset-0 bg-orange-500/10 animate-pulse pointer-events-none"></div>}
-          
+           
           <Zap size={32} className={`text-orange-500 mb-3 transition-transform ${latency ? 'scale-125' : 'group-hover:scale-110'}`} />
-          
+           
           <span className={`text-3xl font-bold transition-all ${latency ? 'text-orange-400' : 'text-white'}`}>
             {latency ? latency : "TPS"}
           </span>
-          
+           
           <span className="text-xs text-slate-500 mt-1 text-center flex items-center gap-1">
             {latency ? (
               <span className="text-orange-400 flex items-center animate-pulse">
