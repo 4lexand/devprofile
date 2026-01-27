@@ -290,7 +290,7 @@ export default function Home() {
                      <Smartphone size={12} /> Seeker Integration
                    </span>
                    <span>
-                     Solana Mobile forensic tool. Captures verified imagery using Seeker hardware.
+                     Anti-AI verification tool. Blockchain-certified provenance to distinguish authentic imagery from synthetic media.
                    </span>
                 </p>
               </div>
